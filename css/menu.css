@@ -1,0 +1,164 @@
+/*--------BOTÓN DE APERTURA DEL MENU--------*/
+
+/*--------ESCONDE LOS CHECKBOX--------*/
+input {
+  position:absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/*--------PREPARANDO EL BOTÓN DEL ACORDEÓN Y SU IMAGEN--------*/
+.nav-icon {
+  position: fixed;
+  content:"";
+  height: 45px;
+  width: 45px;
+  background-image: url(/images/avoug-thumb.png);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 25;
+}
+
+.nav-check {
+  position:fixed;
+  top: -3px;
+  left: -4px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 26;
+}
+
+
+/*--------CREANDO EL MENU ACORDEÓN--------*/
+
+/*--------MENÚ--------*/
+
+.menu-nav {
+  z-index: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 45px;
+  overflow-y: scroll;
+  transition: all 0.3s ease-in-out;
+  /*--------CON = 0 SE MUEVE EL MENU CON 340 EL SITE MAIN--------*/
+  /*--------HABRÍA QUE CAMBIAR TAMBIEN LA LINEA 150--------*/
+  max-width: 0px; 
+  /*max-width: 340px;*/
+  background: var(--grad-blue-orange-light);
+  padding-right: 1em;
+  opacity: 0;
+}
+
+/*--------TABS--------*/
+
+.tabs {
+  overflow:hidden;
+  margin-top: 15px;  
+}
+
+.tab {
+  width: 100%;
+  overflow: hidden;  
+  padding: 0.35rem;
+  font-size: var(--p)
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--black);
+  cursor: pointer;
+  padding: 0.5em;
+  margin: 1em;
+  border-bottom: 2px solid var(--orange);
+}
+
+.tab-label:after {
+  content: "\276f"; /*flechica*/
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.7s;
+}
+
+.tab-content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.tab li {
+  max-width: 50%;
+  margin-left: 10px;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.35rem;
+  font-size: var(--p);
+  border-bottom: solid 2px var(--orange);
+  line-height: 1em;
+  background: transparent;
+}
+
+/*--------HOVERS DE LOS TITULOS DEL MENÚ--------*/
+.tab-label:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.tab li:hover {  
+  color: var(--blue);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1) translateX(25px);
+  padding: 1rem;
+}
+
+/*--------ACCION DE BOTONES DE LAS SECCIONES DEL MENÚ--------*/
+
+input:checked + .tab-label:after {
+  transform: rotate(90deg);
+}
+
+input:checked + .tab-label {
+  transform: rotate(90deg);
+  transform: scale(1.1) translateX(25px);
+}
+
+
+input:checked ~ .tab-content {
+  transition: all 0.3s ease-in-out;
+  max-height: 100vh;
+  padding: 2rem;
+}
+
+/*--------FUNCIONAMIENTO DEL BOTÓN NAV-ICON--------*/
+
+
+/*--------GIRO DEL ICONO--------*/
+.nav-check:checked + .nav-icon {
+  transition: 0.3s all ease-in-out;
+  transform: scale(1.4) rotate(360deg) translateX(5px) translateY(5px);
+}
+
+/*--------PARA QUE EL MENÚ APAREZCA PASANDO DE ANCHO = 0 A =340PX--------*/
+.nav-check:checked ~.menu-nav {
+  z-index: 10;
+  max-width: 340px;
+  transition: 0.3s all ease-in-out;
+  opacity: 1;
+}
+
+/* --------PARA QUE SE MUEVA SITE MAIN--------*/
+/* .nav-check:checked ~ .site-main{
+  left: 339px;
+  transition: 0.3s all ease-in-out;
+  opacity: 1;
+} */
+
+
+
+

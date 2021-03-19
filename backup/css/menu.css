@@ -1,0 +1,126 @@
+/*--------BOTÓN DE APERTURA DEL MENU--------*/
+
+/*--------ESCONDE LOS CHECKBOX--------*/
+input {
+  position:absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+/*--------PREPARANDO EL BOTÓN DEL ACORDEÓN Y SU IMAGEN--------*/
+.nav-icon {
+ content:"";
+ height: 45px;
+ width: 45px;
+ background-image: url(/images/avoug-thumb.png);
+ position: fixed;
+ top: 0;
+ left: 0;
+ transition: all 0.3s ease-in-out;
+ z-index: 20;
+}
+
+.nav-check {
+  position:fixed;
+  top: -3px;
+  left: -4px;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 21;
+}
+
+/*--------CREANDO EL MENU ACORDEÓN--------*/
+
+/*--------MENÚ--------*/
+nav.menu-nav {
+  z-index:-1;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 45px;
+  overflow-y: scroll;
+  transition: all 0.3s ease-in-out;
+  max-width: 330px;
+  background: var(--grad-blue-orange-light);
+}
+
+.tabs {
+  overflow:hidden;
+  margin-top: 15px;  
+}
+
+.tab {
+  width: 100%;
+  overflow: hidden;  
+  padding: 0.35rem;
+  font-size: var(--p)
+}
+
+.tab-label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--black);
+  cursor: pointer;
+  padding: 0.5em;
+  margin: 1em;
+  border-bottom: 2px solid var(--orange);
+}
+
+.tab-label:after {
+  content: "\276f"; /*flechica*/
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.7s;
+}
+
+.tab-content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.tab li {
+  margin-left: 20px;
+  padding-bottom: 0.4rem;
+  font-size: var(--small)
+}
+
+/*--------HOVERS DE LOS TITULOS DEL MENÚ--------*/
+.tab-label:hover {
+  opacity: 0.8;
+}
+
+.tab li:hover {  
+  color: var(--blue);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1) translateX(40px);
+}
+
+/*--------ACCION DE BOTONES DE LAS SECCIONES DEL MENÚ--------*/
+
+input:checked + .tab-label:after {
+  transform: rotate(90deg);
+}
+
+input:checked ~ .tab-content {
+  transition: all 0.3s ease-in-out;
+  max-height: 100vh;
+  padding: 2rem;
+}
+
+/*--------FUNCIONAMIENTO DEL BOTÓN--------*/
+
+.nav-check:checked + .nav-icon {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.4) rotate(360deg) translateX(5px) translateY(5px);
+}
+
+.nav-check:checked ~ nav {  /*--utiliza nav como enlace hermano--*/
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+

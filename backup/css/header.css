@@ -1,0 +1,73 @@
+/*----TOP HEADER----*/
+
+.top-bar {
+  width: 100%;
+  height: 45px;
+  background: var(--grad-blue-orange);
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: var(--p);
+  z-index:15;
+}
+
+.left-head,
+.center-head {
+  color: var(--white);
+}
+
+
+.top-bar .social-link span {
+  display: none;
+}
+
+.top-bar .social-link {
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.top-bar .social-link i {
+  margin: 2rem;
+  animation-name: reverse;
+  animation-duration: 0.3s;
+}
+
+.top-bar .social-link:hover i {
+  animation-name: social;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+/*--------Animación de iconos de red social--------*/
+@keyframes social {
+  from {
+        transform: scale(1) rotate(0deg);
+    }
+  to {
+    transform: scale(1.4) rotate(360deg);
+    }
+  }
+
+@keyframes reverse {
+  from {
+        transform: scale(1.4) rotate(360deg);
+    }
+  to {
+    transform: scale(1) rotate(0deg);
+    }
+  }
+
+/*--------RESPONSIVE TOP BAR--------*/
+
+@media screen and (max-width:54rem) {
+  .top-bar .left-head{
+    margin-left: 48px;
+  }
+  .top-bar .center-head {
+    display: none;
+  }
+  .top-bar .social-link i {
+    margin: 0.5rem;
+  }
+} 

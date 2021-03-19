@@ -1,0 +1,10 @@
+footer .foot-text {
+  position: fixed;
+  left: 0;
+  bottom: 5%;
+  width: 100%;
+  color: var(--blue);
+  text-align: center;
+  font-size: var(--body);
+  text-align: center;
+}

@@ -1,0 +1,14 @@
+#dali {
+  position:fixed;
+  left: 35%;  
+}
+
+
+.contenido {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 45px;
+  left: 20%;
+  z-index:1;
+}
