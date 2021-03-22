@@ -2,11 +2,9 @@
 footer {
   position: relative;
   display:grid;
+  margin: 0 auto;
   justify-content: center;
-  bottom: -200px;
-  left: 0px;
-  right: 0px;
-  width: 100%;
+  bottom: -300px;
   padding: 4rem;
   text-align: center;  
   font-weight: bold;

@@ -16,8 +16,12 @@
   row-gap: 10px;  
 }
 
+
 /*--------BOTONES DE GIRO--------*/
-.turn {
+.content-grid input { 
+  opacity: 0;
+  z-index:50;
+  position: absolute;
   height: 300px;
   width: 300px;
   z-index:50;
@@ -47,7 +51,7 @@
   z-index: 1;
   padding: 10px;
   border: solid 5px;
-  border-radius: 15px
+  border-radius: 15px;
   margin: 5px;
 }
 

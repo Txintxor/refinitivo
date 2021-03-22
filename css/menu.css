@@ -1,7 +1,7 @@
 /*--------BOTÓN DE APERTURA DEL MENU--------*/
 
 /*--------ESCONDE LOS CHECKBOX--------*/
-input {
+.tab input {
   position:absolute;
   opacity: 0;
   z-index: -1;
